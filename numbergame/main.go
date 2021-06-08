@@ -1,0 +1,44 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"math/rand"
+	"os"
+	"time"
+)
+var stdin = bufio.NewReader(os.Stdin)
+
+func InputInt() (int, error) {
+	var n int
+	_, err := fmt.Scanln(&n)
+	if err != nil {
+		stdin.ReadString('\n')
+	}
+	return n, err
+}
+
+func main() {
+	rand.Seed(time.Now().UnixNano()) // 시간 값을 랜덤 시드로 설정
+	r := rand.Intn(100)
+
+	cnt := 0 // 시도한 횟수
+
+	for {
+		fmt.Printf("숫자를 입력하세요:")
+		cnt++
+		n, err := InputInt()
+		if err != nil {
+			fmt.Println("숫자만 입력하세요")
+		} else {
+			if n > r {
+				fmt.Println("입력하신 숫자가 더 큽니다.")
+			} else if n < r {
+				fmt.Println("입력하신 숫자가 더 작습니다.")
+			} else {
+				fmt.Println("숫자를 맞췄습니다. 시도한 횟수:", cnt)
+				break
+			}
+		}
+	}
+}
