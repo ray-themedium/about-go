@@ -15,6 +15,7 @@ func main() {
 	word := os.Args[1]
 	files := os.Args[2:]
 	fmt.Println("찾으려는 단어:", word)
+	fmt.Println(files)
 	PrintAllFiles(files)
 }
 
