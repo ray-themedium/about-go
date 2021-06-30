@@ -21,6 +21,9 @@ func (l *linkedList) prepend(n *node) {
 
 func (l *linkedList) printListData() {
 	toPrint := l.head
+	if toPrint == nil {
+		return
+	}
 	for toPrint.next != nil {
 		fmt.Printf("%d ", toPrint.data)
 		toPrint = toPrint.next
@@ -52,21 +55,22 @@ func (l *linkedList) deleteWithValue(value int64) {
 
 func main() {
 	myList := linkedList{}
-	node1 := &node{data: 50}
-	node2 := &node{data: 42}
-	node3 := &node{data: 65}
-	node4 := &node{data: 77}
-	node5 := &node{data: 88}
-	node6 := &node{data: 15}
-	myList.prepend(node1)
-	myList.prepend(node2)
-	myList.prepend(node3)
-	myList.prepend(node4)
-	myList.prepend(node5)
-	myList.prepend(node6)
+	myList.prepend(&node{data: 50})
 	myList.printListData()
-	myList.deleteWithValue(77)
-	myList.printListData()
-	myList.deleteWithValue(77)
-	myList.printListData()
+	// node2 := &node{data: 42}
+	// node3 := &node{data: 65}
+	// node4 := &node{data: 77}
+	// node5 := &node{data: 88}
+	// node6 := &node{data: 15}
+	// myList.prepend(node1)
+	// myList.prepend(node2)
+	// myList.prepend(node3)
+	// myList.prepend(node4)
+	// myList.prepend(node5)
+	// myList.prepend(node6)
+	// myList.printListData()
+	// myList.deleteWithValue(77)
+	// myList.printListData()
+	// myList.deleteWithValue(77)
+	// myList.printListData()
 }
