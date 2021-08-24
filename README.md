@@ -5,9 +5,9 @@
 - tucker의 go언어 프로그래밍
 
 ### Programming
-- Blockchain for Hyperledger fabric Chaincode<br>
-- Web programming to develop BE application <br>
-- CLI programming with Cobra <br>
-- gRPC server<br>
+- Blockchain for Hyperledger fabric Chaincode
+- Web programming to develop BE application
+- CLI programming with Cobra
+- gRPC server
 - 또 뭐하지
 
