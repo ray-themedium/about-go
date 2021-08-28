@@ -1,0 +1,9 @@
+{
+  "id": "Mihalis",
+  "Surname": "bfsfdsf",
+  "tel": [
+    { "Mobile": true, "Number": "123-123" },
+    { "Mobile": true, "Number": "123-124" },
+    { "Mobile": false, "Number": "123-125" }
+  ]
+}
