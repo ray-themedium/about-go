@@ -36,10 +36,12 @@ func (s *slowReader) Read(p []byte) (n int, err error) {
 func main() {
 	reader := slowReader{Value: "Wario"}
 
-	req, err := http.NewRequestWithContext(context.Background(),
+	req, err := http.NewRequestWithContext(
+		context.Background(),
 		http.MethodPost,
 		"http://localhost:8080/hello",
-		&reader)
+		&reader,
+	)
 	if err != nil {
 		log.Fatalln(err)
 	}

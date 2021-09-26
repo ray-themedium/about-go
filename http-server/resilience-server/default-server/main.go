@@ -5,6 +5,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -33,5 +34,11 @@ func main() {
 	router.GET("/hello/:name", Hello)
 	router.POST("/hello", PostHello)
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	server := &http.Server{
+		Addr:        ":8080",
+		Handler:     router,
+		ReadTimeout: 500 * time.Millisecond,
+	}
+
+	log.Fatal(server.ListenAndServe())
 }

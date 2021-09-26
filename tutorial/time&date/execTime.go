@@ -9,7 +9,12 @@ func main() {
 	start := time.Now()
 	time.Sleep(time.Second)
 	end := time.Since(start)
-	fmt.Println("1초가 걸린 시간:", end)
+	fmt.Println("1초가 걸린 시간 (1):", end)
+
+	start = time.Now()
+	time.Sleep(time.Second)
+	end = time.Now().Sub(start)
+	fmt.Println("1초가 걸린 시간 (2):", end)
 
 	start = time.Now()
 	time.Sleep(2 * time.Second)
