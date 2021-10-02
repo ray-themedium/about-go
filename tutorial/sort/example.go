@@ -6,11 +6,12 @@ import (
 )
 
 func main() {
-	SortForInts()
-	SortForStrings()
-	SortReverse1()
-	SortReverse2()
-	SortForStructs()
+	// SortForInts()
+	// SortForStrings()
+	// SortReverse1()
+	// SortReverse2()
+	// SortForStructs()
+	SortPlayers()
 }
 
 // 기본 타입 슬라이스 정렬
@@ -59,4 +60,38 @@ func SortForStructs() {
 	}
 	sort.Sort(Sts(sts))
 	fmt.Printf("%+v\n", sts)
+}
+
+type Player struct {
+	Name            string
+	Age             int
+	Score           int
+	PassSuccessRate float64
+}
+
+type Players []Player
+
+func (a Players) Len() int      { return len(a) }
+func (a Players) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
+func (a Players) Less(i, j int) bool {
+	if a[i].Score > a[j].Score {
+		return true
+	} else if a[i].Score == a[j].Score { // 점수가 같을 때
+		return a[i].Age > a[j].Age // 나이가 많은 사람이 먼저 오도록함
+	} else {
+		return false
+	}
+}
+func SortPlayers() {
+	slice := []Player{
+		{Name: "a1", Age: 10, Score: 50, PassSuccessRate: 50.5},
+		{Name: "a2", Age: 6, Score: 88, PassSuccessRate: 50.5},
+		{Name: "a3", Age: 11, Score: 44, PassSuccessRate: 50.5},
+		{Name: "a4", Age: 23, Score: 22, PassSuccessRate: 50.5},
+		{Name: "a5", Age: 14, Score: 190, PassSuccessRate: 50.5},
+		{Name: "a6", Age: 8, Score: 22, PassSuccessRate: 50.5},
+		{Name: "a7", Age: 2, Score: 50, PassSuccessRate: 50.5},
+	}
+	sort.Sort(Players(slice))
+	fmt.Println(slice)
 }
