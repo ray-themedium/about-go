@@ -9,5 +9,3 @@
 - Web programming to develop BE application
 - CLI programming with Cobra
 - gRPC server
-- 또 뭐하지
-
