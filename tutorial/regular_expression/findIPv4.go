@@ -18,12 +18,12 @@ func findIP(input string) string {
 }
 
 func main() {
-	args := os.Args
-	if len(args) < 2 {
-		fmt.Printf("usage: %s logFile\n", filepath.Base(args[0]))
+	arguments := os.Args
+	if len(arguments) < 2 {
+		fmt.Printf("useage: %s logFile\n", filepath.Base(arguments[0]))
 		os.Exit(1)
 	}
-	for _, filename := range args[1:] {
+	for _, filename := range arguments[1:] {
 		f, err := os.Open(filename)
 		if err != nil {
 			fmt.Printf("error opening file %s\n", err)
@@ -40,8 +40,7 @@ func main() {
 				break
 			}
 			ip := findIP(line)
-			fmt.Println(ip)
-			trial := net.ParseIP(ip)
+			trial := net.ParseIP(ip) // 아이피 주소가 맞는지 확인
 			if trial.To4() == nil {
 				continue
 			} else {

@@ -37,7 +37,7 @@ func main() {
 		defer f.Close()
 		r := bufio.NewReader(f)
 		for {
-			line, err := r.ReadString('\n')
+			line, err := r.ReadString('\n') // 매개변수로 지정한 내용을 처음 발견할 때까지 파일을 읽음
 			if err == io.EOF {
 				break
 			} else if err != nil {

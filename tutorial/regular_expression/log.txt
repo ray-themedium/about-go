@@ -1,0 +1,10 @@
+jna2215275914153104480.tmp
+-- [22/Oct/2021:01:52:44 +0200] | main | DEBUG | NativeLibrary | Looking for version variants
+2021-10-22 01:52:44.923+00:00 | main | DEBUG | NativeLibrary | Looking for library 'secp256k1'
+2021-10-22 01:52:44.923+00:00 | main | DEBUG | NativeLibrary | Adding paths from jna.library.path: null
+2021-10-22 01:52:44.924+00:00 | main | DEBUG | NativeLibrary | Trying libsecp256k1.so
+2021-10-22 01:52:44.924+00:00 | main | DEBUG | NativeLibrary | Loading failed with message: libsecp256k1.so: cannot open shared object file: No such file or directory
+2021-10-22 01:52:44.925+00:00 | main | DEBUG | NativeLibrary | Adding system paths: [/usr/lib/x86_64-linux-gnu, /lib/x86_64-linux-gnu, /usr/lib64, /lib64, /usr/lib, /lib]
+2021-10-22 01:52:44.925+00:00 | main | DEBUG | NativeLibrary | Trying libsecp256k1.so
+2021-10-22 01:52:44.926+00:00 | main | DEBUG | NativeLibrary | Loading failed with message: libsecp256k1.so: cannot open shared object file: No such file or directory
+2021-10-22 01:52:44.926+00:00 | main | DEBUG | NativeLibrary | Looking for version variants
