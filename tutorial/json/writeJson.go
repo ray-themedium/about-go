@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 )
 
 type Record struct {
@@ -16,6 +17,15 @@ type Telephone struct {
 	Number string
 }
 
+func saveToJSON(filename *os.File, key interface{}) {
+	encodeJSON := json.NewEncoder(filename)
+	err := encodeJSON.Encode(key)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+
 func main() {
 	myRecord := Record{
 		"taeho",
@@ -26,13 +36,6 @@ func main() {
 			{true, "1232-1234"},
 		},
 	}
-	rec, err := json.Marshal(&myRecord)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	unRec := new(Record)
-	fmt.Println(string(rec))
-	json.Unmarshal(rec, &unRec)
-	fmt.Println(unRec)
+	file, _ := os.Create("saveJSON.json")
+	saveToJSON(file, myRecord)
 }

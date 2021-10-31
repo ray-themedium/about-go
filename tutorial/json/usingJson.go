@@ -7,7 +7,7 @@ import (
 )
 
 type Record struct {
-	Name    string `json:"id"`
+	Name    string
 	Surname string
 	Tel     []Telephone
 }
@@ -31,39 +31,15 @@ func loadFromJSON(filename string, key interface{}) error {
 	return nil
 }
 
-func saveToJSON(filename *os.File, key interface{}) {
-	encodeJSON := json.NewEncoder(filename)
-	err := encodeJSON.Encode(key)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-}
-
 func main() {
-	// args := os.Args
-	// if len(args) == 1 {
-	// 	fmt.Println("Please provide a filename!")
-	// 	return
-	// }
-	// filename := args[1]
-	// var myRecord Record
-	// err := loadFromJSON(filename, &myRecord)
-	// if err == nil {
-	// 	fmt.Println(myRecord)
-	// } else {
-	// 	fmt.Println(err)
-	// }
-
-	fmt.Println("\n----- save ------")
-	writeRecord := Record{
-		Name:    "test",
-		Surname: "test2",
-		Tel: []Telephone{
-			{Mobile: true, Number: "11-11"},
-			{Mobile: true, Number: "11-12"},
-			{Mobile: true, Number: "11-13"},
-		},
+	args := os.Args
+	fmt.Printf("%v\n", args)
+	filename := args[1]
+	var myRecord Record
+	err := loadFromJSON(filename, &myRecord)
+	if err == nil {
+		fmt.Println(myRecord)
+	} else {
+		fmt.Println(err)
 	}
-	saveToJSON(os.Stdout, writeRecord)
 }
