@@ -1,3 +1,0 @@
-# github.com/bbaktaeho/myModule/v2 v2.1.0
-## explicit
-github.com/bbaktaeho/myModule/v2
