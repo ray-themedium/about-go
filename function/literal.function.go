@@ -20,9 +20,9 @@ func ExampleCapture() {
 func CaptureLoop() {
 	f := make([]func(), 3)
 	fmt.Println("ValueLoop")
-	for i, _ := range f {
+	for i := range f {
 		f[i] = func() {
-			// i를 참조로 가져옴
+			// i를 참조로 가져옴 
 			fmt.Println(i)
 		}
 	}
