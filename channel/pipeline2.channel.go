@@ -11,7 +11,6 @@ import (
 	"time"
 )
 
-var CLOSEA = false
 var DATA = make(map[int]bool)
 var signal chan struct{}
 
