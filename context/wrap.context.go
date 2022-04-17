@@ -40,6 +40,7 @@ func goroutineFuncWithLog(ctx Context) {
 	}
 
 	logger.Println("start go routine !")
+	
 	/* 코드 로직 */
 
 	w.Done()
