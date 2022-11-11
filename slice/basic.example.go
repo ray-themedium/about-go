@@ -18,6 +18,8 @@ func ExampleCopySlice() {
 	fmt.Println(cnt1, b)
 	fmt.Println(cnt2, c)
 
+	// djsklfzqs
+
 	// 동일한 크기에 복사할 때
 	d := make([]int, len(a))
 	cnt3 := copy(d, a)
